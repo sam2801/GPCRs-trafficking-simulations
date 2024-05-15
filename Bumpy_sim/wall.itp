@@ -1,0 +1,15 @@
+; Here we can define molecules, here consisting of a single atom.
+; We also anchor it with a force constant of 10 kJ/mol/nm^2 (position_restraints section)
+; We define specific interaction terms for this interaction in the nonbond_params section
+;
+
+[ moleculetype ]
+WAL    	  2
+
+[ atoms ]
+;   	n  	atype 	resnr 	residu 	atom  	cgnr	charge	mass
+    	1    	WAL   	1    	WAL    	WAL    	0    	0.0000 	760.000
+
+[ position_restraints ]
+1 1 1000 1000 1000
+

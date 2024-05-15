@@ -1,0 +1,41 @@
+integrator               = md
+dt                       = 0.020
+nsteps                   = 2500000000
+nstcomm                  = 100
+comm-grps		 = 
+
+nstlog                   = 500000
+nstenergy                = 50000
+nstxout-compressed       = 50000
+compressed-x-precision   = 100
+compressed-x-grps        = LIPIDS
+energygrps               = 
+
+cutoff-scheme            = Verlet
+nstlist                  = 20
+ns_type                  = grid
+pbc                      = xyz
+verlet-buffer-tolerance  = 0.005
+
+coulombtype              = reaction-field 
+rcoulomb                 = 1.1
+epsilon_r                = 15
+epsilon_rf               = 0
+vdw_type                 = cutoff  
+vdw-modifier             = Potential-shift-verlet
+rvdw                     = 1.1
+
+tcoupl                  = V-rescale
+tc_grps                 = LIPIDS SOLVENT
+tau_t                   = 1.0	 1.0
+ref_t                   = 310	 310
+
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = semiisotropic
+tau_p                   = 12.0    
+compressibility         = 4.5e-5  4.5e-5 
+ref_p                   = 1.0     1.0
+
+constraints              = none 
+constraint_algorithm     = Lincs
+refcoord-scaling	 = no
